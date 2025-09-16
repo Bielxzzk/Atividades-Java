@@ -1,13 +1,8 @@
 package bielxzzk;
-
-import java.util.Scanner;
-import java.lang.Math;
-import java.text.DecimalFormat;
 public class Atividades {
-
     public static void main(String[] args) {
 
-        Scanner entrada = new Scanner(System.in); 
+        
         
 //        Atividade 01
 //        double raio, circ, area;
@@ -48,24 +43,81 @@ public class Atividades {
 //        raiz=Math.sqrt(hipo);
 //        
 //        System.out.println("Sua Hipotenusa será: "+df.format(raiz));
+
+//        Atividade 04
+//        double real, dolar, cotacao, troco;
+//        int val_cot;
+//        DecimalFormat df= new DecimalFormat("0.00");
+//        System.out.println("Digite o valor em R$ a ser convertido: ");
+//        real=entrada.nextDouble();
+//        
+//        dolar=5.32;
+//        
+//        cotacao=(real/dolar);
+//        val_cot= (int)Math.round(cotacao);
+//        System.out.print("Com R$"+real);
+//        System.out.println( " voce consegue: US$"+val_cot);
+//        
+//        troco=real-(val_cot*dolar);
+//        System.out.println("seu troco e"+troco);
+
+//        Atividade 05
+//        Scanner entrada = new Scanner(System.in);
+//        int n,j1,j2,soma;
         
+//        n = entrada.nextInt();
+//        j1 = entrada.nextInt();
+//        j2 = entrada.nextInt();
+//        soma = (j1+j2)/n;
         
-        // Atividade 04
-        double real, dolar, cotacao, troco;
-        int val_cot;
-        DecimalFormat df= new DecimalFormat("0.00");
-        System.out.println("Digite o valor em R$ a ser convertido: ");
-        real=entrada.nextDouble();
+//        System.out.println("A média é:"+soma);
+//        System.out.println(Math.max(j1, j2));
+//        System.out.println(Math.min(j1, j2));
+
+//        Atividade 06
+//        Scanner entrada = new Scanner(System.in);
+//        double angulo,tan,sen,cos,rad;
         
-        dolar=5.32;
+//        System.out.println("Insira o valor de um ângulo:");
+//        angulo = entrada.nextDouble();
         
-        cotacao=(real/dolar);
-        val_cot= (int)Math.round(cotacao);
-        System.out.print("Com R$"+real);
-        System.out.println( " voce consegue: US$"+val_cot);
+//        rad = Math.toRadians(angulo);
+//        tan = Math.tan(rad);
+//        sen = Math.sin(rad);
+//        cos = Math.cos(rad);
         
-       
-        troco=real-(val_cot*dolar);
-        System.out.println("seu troco e"+troco);
+//        System.out.println("Tangente desse ângulo:"+tan);
+//        System.out.println("Seno desse ângulo:"+sen);
+//        System.out.println("Cosseno desse ângulo:"+cos);
+
+//        Atividade 07
+//        Scanner entrada = new Scanner(System.in);
+//        double x1,x2,y1,y2,calc;
+        
+//        x1 = entrada.nextDouble();
+//        x2 = entrada.nextDouble();
+//        y1 = entrada.nextDouble();
+//        y2 = entrada.nextDouble();
+        
+//        calc = Math.sqrt(Math.pow((x2-x1), 2)) + (Math.pow((y1-y2), 2));
+        
+//        System.out.println("A distância euclediana é:" +calc);
+
+//        Atividade 08
+//        Scanner entrada = new Scanner(System.in);
+//        double n1,n2,n3,media,soma,dif;
+//        System.out.println("Digite 3 valores:");
+//        n1 = entrada.nextDouble();
+//        n2 = entrada.nextDouble();
+//        n3 = entrada.nextDouble();
+//        media = (n1+ n2 +n3)/3;
+//        soma = Math.abs(n1) + Math.abs(n2) + Math.abs(n3);
+//        dif = Math.abs(n1 - n3);
+//        System.out.println("A média é:"+ media);
+//        System.out.println("A soma dos valores absolutos é:"+ soma);
+//        System.out.println("A diferença do maior pro menor é:"+ dif);
+
+//        Atividade 09 
+
     }  
 }
