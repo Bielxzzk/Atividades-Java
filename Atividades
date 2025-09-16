@@ -1,4 +1,5 @@
 package bielxzzk;
+
 public class Atividades {
     public static void main(String[] args) {
 
@@ -117,7 +118,19 @@ public class Atividades {
 //        System.out.println("A soma dos valores absolutos é:"+ soma);
 //        System.out.println("A diferença do maior pro menor é:"+ dif);
 
-//        Atividade 09 
+//        Atividade 09
+//        Scanner entrada = new Scanner(System.in);
+//        int a,b,c;
+//        double x1,x2,delta;
+//        System.out.println("Digite os valores de a, b e c:");
+//        a = entrada.nextInt();
+//        b = entrada.nextInt();
+//        c = entrada.nextInt();
+//        delta = ((Math.pow(b, 2))-( 4*a*c));
+//       x1 = ((0 - b) + delta)/(2*a);
+//        x2 = ((0 - b) - delta)/(2*a);
+//       System.out.println("O valor de x1 é:"+x1);
+//        System.out.println("O valor de x2 é:"+x2);
 
     }  
 }
