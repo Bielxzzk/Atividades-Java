@@ -1,4 +1,5 @@
-package bielxzzk;
+import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class Atividades {
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class Atividades {
 //        
 //        imc=peso/(altura*altura);
 //        System.out.println("Seu IMC será: "+df.format(imc));
-//        
+        
 //        Atividade 03
 //        double cat1, cat2, hipo, raiz;
 //        DecimalFormat df= new DecimalFormat("0.00");
@@ -48,7 +49,6 @@ public class Atividades {
 //        Atividade 04
 //        double real, dolar, cotacao, troco;
 //        int val_cot;
-//        DecimalFormat df= new DecimalFormat("0.00");
 //        System.out.println("Digite o valor em R$ a ser convertido: ");
 //        real=entrada.nextDouble();
 //        
@@ -65,12 +65,12 @@ public class Atividades {
 //        Atividade 05
 //        Scanner entrada = new Scanner(System.in);
 //        int n,j1,j2,soma;
-        
+//        
 //        n = entrada.nextInt();
 //        j1 = entrada.nextInt();
 //        j2 = entrada.nextInt();
 //        soma = (j1+j2)/n;
-        
+//        
 //        System.out.println("A média é:"+soma);
 //        System.out.println(Math.max(j1, j2));
 //        System.out.println(Math.min(j1, j2));
@@ -78,15 +78,15 @@ public class Atividades {
 //        Atividade 06
 //        Scanner entrada = new Scanner(System.in);
 //        double angulo,tan,sen,cos,rad;
-        
+//        
 //        System.out.println("Insira o valor de um ângulo:");
 //        angulo = entrada.nextDouble();
-        
+//        
 //        rad = Math.toRadians(angulo);
 //        tan = Math.tan(rad);
 //        sen = Math.sin(rad);
 //        cos = Math.cos(rad);
-        
+//        
 //        System.out.println("Tangente desse ângulo:"+tan);
 //        System.out.println("Seno desse ângulo:"+sen);
 //        System.out.println("Cosseno desse ângulo:"+cos);
@@ -132,5 +132,14 @@ public class Atividades {
 //       System.out.println("O valor de x1 é:"+x1);
 //        System.out.println("O valor de x2 é:"+x2);
 
+//        Atividade10
+//          Scanner entrada = new Scanner(System.in);
+//          double far,cel;
+          
+//          System.out.println("Digite o Valor em Fahrenheit F: ");
+//          far = entrada.nextDouble();
+                  
+//          cel = (far-32)/1.0;
+//          System.out.println("O valor de F "+far+" em Fahrenheit e equivalente a C"+cel);
     }  
 }
