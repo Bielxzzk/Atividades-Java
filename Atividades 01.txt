@@ -1,0 +1,16 @@
+importar Java.língua.;
+
+// O método principal deve estar em uma classe chamada "Main".
+aula Principal{
+    público estático vazio principal(Corda[]argumentos) {
+        Sistema.fora.imprimir("OLÁ");
+
+
+    int UM=25;
+    int B=UM*3;
+    int C=10;
+    int D=UM/C;
+    Sistema.fora.imprimir("A = "+UM);
+    Sistema.fora.imprimir("B = "+B);
+    Sistema.fora.imprimir("C = "+C);
+    Sistema.fora.imprimir("D = "+D
