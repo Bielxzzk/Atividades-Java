@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Atividades {
     public static void main(String[] args) {
 
-        
+           
         
 //        Atividade 01
 //        double raio, circ, area;
@@ -143,3 +143,4 @@ public class Atividades {
 //          System.out.println("O valor de F "+far+" em Fahrenheit e equivalente a C"+cel);
     }  
 }
+
