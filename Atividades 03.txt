@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
-
+  
 public class Atividades {
     public static void main(String[] args) {
       //Atividade 01
@@ -190,3 +190,4 @@ public class Atividades {
         
     }  
 }
+
