@@ -1,0 +1,178 @@
+package com.mycompany.gabrielrandolfo;
+import java.util.*;
+
+public class GabrielRandolfo {
+
+    public static void main(String[] args) {
+
+        try (Scanner op = new Scanner(System.in)) {
+            int opcao;
+            double saldoreais = 100.00;
+            double saldodolares = 0.0;
+            char voltarOuSair;
+            List<String> extrato = new ArrayList<>();
+
+            do {
+                System.out.println("=== CAIXA RAPIDO ===");
+                System.out.println("1 - Saldo");
+                System.out.println("2 - Deposito");
+                System.out.println("3 - Extrato");
+                System.out.println("4 - Simular Emprestimo");
+                System.out.println("5 - Comprar Dolar");
+                System.out.println("0 - Sair");
+                System.out.print("Escolha uma opcao: ");
+
+                opcao = op.nextInt();
+
+                switch (opcao) {
+
+                    case 1 -> {
+                        System.out.println("\nSaldo em Reais: R$ " + String.format("%.2f", saldoreais));
+                        System.out.println("Saldo em Dolares: US$ " + String.format("%.2f", saldodolares));
+                        System.out.print("\nDeseja voltar ao menu inicial (S) ou encerrar o programa (N)? ");
+                        voltarOuSair = op.next().toUpperCase().charAt(0);
+                        if (voltarOuSair == 'N') {
+                            opcao = 0;
+                            System.out.println("\nEncerrando o programa... Obrigado por usar o Caixa Rapido!");
+                        }
+                    }
+
+                    case 2 -> {
+                        System.out.print("\nInforme o valor do deposito (R$): ");
+                        double deposito = op.nextDouble();
+
+                        if (deposito > 0 && deposito < 5000) {
+                            saldoreais += deposito;
+                            System.out.println("Deposito de R$ " + String.format("%.2f", deposito) + " realizado com sucesso!");
+                            System.out.println("Novo saldo em Reais: R$ " + String.format("%.2f", saldoreais));
+
+                            extrato.add(0, "DEPOSITO +R$ " + String.format("%.2f", deposito));
+                            if (extrato.size() > 10) extrato.remove(10);
+                        } else {
+                            System.out.println("Valor invalido! O deposito deve ser maior que R$ 0 e ate R$ 5.000,00.");
+                        }
+
+                        System.out.print("\nDeseja voltar ao menu inicial (S) ou encerrar o programa (N)? ");
+                        voltarOuSair = op.next().toUpperCase().charAt(0);
+                        if (voltarOuSair == 'N') {
+                            opcao = 0;
+                            System.out.println("\nEncerrando o programa... Obrigado por usar o Caixa Rapido!");
+                        }
+                    }
+
+                    case 3 -> {
+                        System.out.println("\nUltimas 10 movimentacoes:");
+                        if (extrato.isEmpty()) {
+                            System.out.println("Nenhum extrato");
+                        } else {
+                            for (int i = 0; i < extrato.size(); i++) {
+                                System.out.println((i + 1) + ") " + extrato.get(i));
+                            }
+                        }
+
+                        System.out.print("Deseja voltar ao menu (S) ou encerrar o programa (N)? ");
+                        voltarOuSair = op.next().toUpperCase().charAt(0);
+                        if (voltarOuSair == 'N') {
+                            opcao = 0;
+                            System.out.println("\nEncerrando o programa... Obrigado por usar o Caixa Rapido!");
+                        }
+                    }
+
+                    case 4 -> {
+                        System.out.println("\n=== Simular Emprestimo ===");
+
+                        System.out.print("Informe o valor do emprestimo (R$): ");
+                        double valorEmprestimo = op.nextDouble();
+
+                        if (valorEmprestimo < 200 || valorEmprestimo > 100000) {
+                            System.out.println("Valor invalido! O valor deve estar entre R$ 200,00 e R$ 100.000,00.");
+                        } else {
+                            System.out.print("Informe o seu salario bruto (R$): ");
+                            double salarioBruto = op.nextDouble();
+
+                            System.out.print("Quantidade de parcelas (6, 12, 18, 24, 30, 36, 40, 48, 56, 60 ou 72): ");
+                            int parcelas = op.nextInt();
+
+                            List<Integer> opcoesParcelas = Arrays.asList(6, 12, 18, 24, 30, 36, 40, 48, 56, 60, 72);
+
+                            if (!opcoesParcelas.contains(parcelas)) {
+                                System.out.println("Quantidade de parcelas invalida.");
+                            } else {
+                                double valorJuros = valorEmprestimo * 0.02;
+                                double totalComJuros = valorEmprestimo + valorJuros;
+                                double valorParcela = totalComJuros / parcelas;
+                                double limiteParcela = salarioBruto * 0.30;
+
+                                System.out.printf("\nO valor da parcela com base no salario bruto nao pode ultrapassar R$ %.2f.\n", limiteParcela);
+                                System.out.printf("Os juros de 2%% acrescidos no total de R$ %.2f, totalizando o valor de R$ %.2f.\n", valorJuros, totalComJuros);
+
+                                if (valorParcela <= limiteParcela) {
+                                    Random random = new Random();
+                                    int num = random.nextInt(100000);
+                                    String protocolo = String.format("EM%05d", num);
+
+                                    System.out.println("Sendo assim, o usuario teria a seguinte resposta:");
+                                    System.out.printf("Valor da parcela: R$ %.2f x %d\n", valorParcela, parcelas);
+                                    System.out.printf("Valor do emprestimo: R$ %.2f\n", valorEmprestimo);
+                                    System.out.printf("Valor total do emprestimo a ser pago: R$ %.2f\n", totalComJuros);
+                                    System.out.printf("\nEmprestimo disponivel, entre em contato com a central e informe o numero de protocolo %s\n", protocolo);
+                                } else {
+                                    System.out.println("Emprestimo indisponivel.");
+                                }
+                            }
+                        }
+
+                        System.out.print("\nDeseja voltar ao menu (S) ou encerrar o programa (N)? ");
+                        voltarOuSair = op.next().toUpperCase().charAt(0);
+                        if (voltarOuSair == 'N') {
+                            opcao = 0;
+                            System.out.println("\nEncerrando o programa... Obrigado por usar o Caixa Rapido!");
+                        }
+                    }
+
+                    case 5 -> {
+                        System.out.print("\nInforme o valor em dolares que deseja comprar: ");
+                        double dolarCompra = op.nextDouble();
+
+                        if (dolarCompra > 0) {
+                            double cotacao = 5.32;
+                            double valorEmReais = dolarCompra * cotacao;
+
+                            if (valorEmReais <= saldoreais) {
+                                saldoreais -= valorEmReais;
+                                saldodolares += dolarCompra;
+
+                                System.out.println("Compra de US$ " + String.format("%.2f", dolarCompra) + " realizada com sucesso.");
+                                System.out.println("Valor em Reais debitado: R$ " + String.format("%.2f", valorEmReais));
+                                System.out.println("Novo saldo em Reais: R$ " + String.format("%.2f", saldoreais));
+                                System.out.println("Novo saldo em Dolares: US$ " + String.format("%.2f", saldodolares));
+
+                                extrato.add(0, "COMPRA DOLAR -R$ " + String.format("%.2f", valorEmReais)
+                                        + " | +US$ " + String.format("%.2f", dolarCompra));
+                                if (extrato.size() > 10) extrato.remove(10);
+                            } else {
+                                System.out.println("Saldo insuficiente para esta compra.");
+                            }
+                        } else {
+                            System.out.println("Valor invalido!");
+                        }
+
+                        System.out.print("\nDeseja voltar ao menu inicial (S) ou encerrar o programa (N)? ");
+                        voltarOuSair = op.next().toUpperCase().charAt(0);
+                        if (voltarOuSair == 'N') {
+                            opcao = 0;
+                            System.out.println("\nEncerrando o programa... Obrigado por usar o Caixa Rapido!");
+                        }
+                    }
+
+                    case 0 -> System.out.println("Saindo... Obrigado por usar o Caixa Rapido!");
+
+                    default -> System.out.println("Opcao invalida! Tente novamente.");
+                }
+
+                System.out.println(); // linha em branco
+
+            } while (opcao != 0);
+        }
+    }
+}
