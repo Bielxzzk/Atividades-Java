@@ -1,7 +1,7 @@
         Scanner entrada = new Scanner(System.in);
         //1
         //int n,i;
-        
+        //
         //i = 0;
         //System.out.print("Insira um número: ");
         //n = entrada.nextInt();
@@ -193,4 +193,5 @@
        
     }
     
+
 }
